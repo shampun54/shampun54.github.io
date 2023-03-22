@@ -903,7 +903,10 @@
 
 	&.active {
 		display: block;
-		margin: 0px 0px 0px -12px;
+
+		@media (min-width: 320px) {
+			margin: 0px 0px 0px -12px;
+		}
 	}
 
 }

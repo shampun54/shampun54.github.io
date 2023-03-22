@@ -1800,7 +1800,11 @@ body.scroll-lock {
 }
 .column-red.active {
   display: block;
-  margin: 0px 0px 0px -12px;
+}
+@media (min-width: 320px) {
+  .column-red.active {
+    margin: 0px 0px 0px -12px;
+  }
 }
 
 .item-service__body {
