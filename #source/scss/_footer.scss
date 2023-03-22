@@ -1,0 +1,169 @@
+@import "ui.scss";
+
+//======================================================================================================================================================================
+.footer {
+	background-color: #404040;
+	width: 100%;
+	// .footer__container
+
+	&__container {}
+
+	// .footer__body
+
+	&__body {
+		padding: 18px 0px;
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+
+		@media (max-width: 767px) {
+			grid-auto-flow: row;
+		}
+	}
+
+	// .footer__logo
+
+	&__logo {
+		@media (max-width: 767px) {
+			text-align: center;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	// .footer__menu
+
+	&__menu {
+		display: grid;
+
+		@media (min-width: 1024px) {
+			grid-auto-flow: column;
+
+		}
+
+		justify-content: space-between;
+		align-items: center;
+
+		@media (max-width: 1024px) {
+			grid-template-areas:
+				"requ location"
+				"other phone"
+			;
+			grid-template-rows: 1fr 1fr;
+			margin: 0px 0px 0px 20px;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: 767px) {
+			margin: 0;
+		}
+
+
+
+		@media (max-width: 767px) {
+			grid-template-areas:
+				"phone" "requ"
+				"location other"
+			;
+			grid-template-columns: 1fr 1fr;
+			justify-content: space-between;
+		}
+	}
+}
+
+
+
+.menu-footer {
+
+	// .menu-footer__location
+
+	&__location {
+		position: relative;
+		padding: 0px 0px 0px 20px;
+
+		@media (max-width: 1024px) {
+			grid-area: location;
+			grid-column: 2 / 3;
+			justify-self: end;
+		}
+
+		@media (max-width: 767px) {
+			grid-column: 1 / 2;
+			justify-self: start;
+			margin: 0px 0px 6px 0px;
+		}
+
+		@media (max-width: 479px) {
+			margin: 0px 10px 6px 0px;
+		}
+
+		&:before {
+			content: '';
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			left: 0;
+			background: url('../img/Header/01.svg')0 0 / cover no-repeat;
+		}
+	}
+
+	// .menu-footer__requseets
+
+	&__requseets {
+		@media (max-width: 1024px) {
+			grid-area: requ;
+		}
+
+		@media (max-width: 767px) {
+
+			grid-column: 2 / 3;
+			justify-self: end;
+		}
+	}
+
+	// .menu-footer__other
+
+	&__other {
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: 1024px) {
+			grid-area: other;
+		}
+
+		@media (max-width: 767px) {
+
+			grid-column: 2 / 3;
+			justify-self: end;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 12px;
+		}
+
+		span {
+			white-space: nowrap;
+
+
+		}
+	}
+
+	// .menu-footer__phone
+
+	&__phone {
+		@media (max-width: 1024px) {
+			grid-area: phone;
+			grid-column: 2 / 3;
+			justify-self: end;
+		}
+
+		@media (max-width: 767px) {
+			grid-column: 1 / 2;
+			justify-self: start;
+		}
+
+		display: flex;
+		flex-direction: column;
+	}
+}

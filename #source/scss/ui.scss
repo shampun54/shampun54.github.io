@@ -1,0 +1,418 @@
+@import "variablestyle.scss";
+//АДАПТИВНОЕ СВОЙСТВО
+
+
+//==================================================================================================================================================
+//==================================================================================================================================================
+//==================================================================================================================================================
+//=========================================================ОСНОВНОЙ ШРИФТ============================================================================
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+//=====================================================ОСНОВНЫЕ БЛОКИ===========================================================================
+body {
+	font-family: 'Arial';
+}
+
+body.scroll-lock {
+	overflow: hidden;
+}
+
+//=====================================ВСПОМОГАЮЩИЕ=КЛАССЫ============================================================================================
+
+//полноэкранная картинка
+
+.ibg {
+	/*
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	*/
+	background: 0 0 / cover no-repeat;
+
+	img {
+		display: none;
+	}
+}
+
+
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: 1310px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+//бургер
+.icon-menu {
+	display: none;
+}
+
+@media (max-width: 992px) {
+	.icon-menu {
+		display: block;
+		position: relative;
+		z-index: 6;
+		width: 30px;
+		height: 18px;
+
+		&:before,
+		&:after {
+			content: '';
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			position: absolute;
+		}
+
+		&:before {
+			top: 18px;
+
+			transition: all 0.3s ease 0s;
+		}
+
+		&:after {
+			bottom: 7px;
+			transition: all 0.3s ease 0s;
+
+		}
+
+		&.active {
+			&:before {
+				transform: rotate(45deg);
+				top: 10px;
+				transition: all 0.3s ease 0s;
+			}
+		}
+
+		&.active {
+			&:after {
+				transform: rotate(-45deg);
+				transition: all 0.3s ease 0s;
+			}
+		}
+
+		&.active {
+			span {
+				display: none;
+			}
+		}
+
+		span {
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			background-color: #000;
+		}
+	}
+}
+
+//Стрелки
+.icon-arrow {
+	position: relative;
+
+	&:before,
+	&:after {
+		content: '';
+		background-color: #fff;
+		width: 20px;
+		height: 2px;
+		position: absolute;
+	}
+
+	&:before {
+		left: 20px;
+		transform: rotate(50deg);
+	}
+
+	&:after {
+		left: 8px;
+		transform: rotate(-50deg);
+	}
+}
+
+//============FULLSCREEN=====================
+
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+}
+
+.main-screen {
+	flex: 1 0 100%;
+	position: relative;
+	z-index: 1;
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+}
+
+
+//==========================================================КЛАССЫ=ДЛЯ=ТЕКСТОВ====================================================================
+.white-link {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	color: #FFFFFF;
+
+}
+
+.btn-main {
+	border: 2px solid #FFFFFF;
+	border-radius: 4px;
+	background-color: transparent;
+	padding: 13px 17px;
+	border: 2px solid #D4D4D4;
+}
+
+.main-title {
+	font-family: 'Roboto';
+	font-weight: 700;
+	@include adaptiv-value("font-size", 54, 40, 1);
+	line-height: 116%;
+	color: #E7E7E7;
+
+}
+
+.main-sub-title {
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 115%;
+	color: #252525;
+}
+
+.plashka {
+	background-color: #404040;
+}
+
+
+
+//Одинаковые блоки
+
+//contacts
+.main {
+
+	// .main__contacts
+
+	&__contacts {
+		position: relative;
+		@include adaptiv-value("margin-top", 100, 60, 1);
+	}
+}
+
+.contacts {
+
+	// .contacts__image
+
+	&__image {
+		filter: brightness(0.4);
+		padding: 0px 0px 34% 0px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+	}
+
+	&__imageTwo {
+		position: relative;
+		padding: 0px 0px 15% 0px;
+
+		@media (max-width: 767px) {
+			padding: 0px 0px 30% 0px;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .contacts__container
+
+	&__container {}
+
+	// .contacts__body
+
+	&__body {
+		padding: 80px 0px 90px 0px;
+	}
+
+	// .contacts__title
+
+	&__title {
+		color: #fff;
+		text-align: center;
+		margin: 0px 0px 60px 0px;
+	}
+
+	// .contacts__form
+
+	&__form {
+		display: grid;
+
+		@media (min-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 767px) {
+			grid-template-areas:
+				'oneItem'
+				'twoItem'
+			;
+			align-items: center;
+		}
+	}
+}
+
+.form-contacts {
+
+	// .form-contacts__item
+
+	&__item {
+		display: grid;
+		align-items: start;
+		grid-auto-flow: row;
+	}
+
+	// .form-contacts__title
+
+	&__title {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 112%;
+		color: #FFFFFF;
+		position: relative;
+
+		input[type=file] {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 150px;
+			height: 40px;
+			opacity: 0;
+			display: block;
+			z-index: 1;
+			margin: 52px 0px 0px 0px;
+		}
+
+		display: grid;
+		grid-auto-flow: row;
+
+		span {
+			position: relative;
+
+
+			&.active {
+				padding: 13px 27px 13px 17px;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					transform: translate(0, -50%);
+					right: 7px;
+					width: 13px;
+					height: 10px;
+					z-index: 1;
+					background: url('../img/main/contacts/01.svg')0 0 / cover no-repeat;
+				}
+			}
+
+			margin: 32px 0px 0px 0px;
+			justify-self: start;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 112%;
+			text-align: center;
+			color: #FFFFFF;
+			background-color: #000;
+			padding: 13px 17px;
+		}
+	}
+
+	// .form-contacts__button
+
+	&__button {
+		background-color: transparent;
+		border: 2px solid #FFFFFF;
+		border-radius: 4px;
+		padding: 13px 17px;
+		text-align: center;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 112%;
+		text-align: center;
+		color: #FFFFFF;
+
+	}
+
+	// .form-contacts__input
+
+	&__input {
+		padding: 13px 17px;
+		background-color: #FFFFFF;
+		border-radius: 4px;
+		transition: all 0.8s ease 0s;
+
+		&.active {
+			transition: all 0.8s ease 0s;
+			box-shadow: 2px 2px 2px #42aaff;
+		}
+
+
+
+		&::-webkit-input-placeholder {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 112%;
+			color: #D4D4D4;
+		}
+	}
+}
+
+.item-inputs {
+	gap: 20px;
+
+	@media (max-width: 767px) {
+		grid-area: oneItem;
+		margin: 0px 0px 20px 0px;
+
+	}
+}
+
+.item-button {
+	@media (max-width: 767px) {
+		grid-area: twoItem;
+		justify-content: center;
+	}
+}
