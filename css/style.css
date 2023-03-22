@@ -1801,7 +1801,7 @@ body.scroll-lock {
 .column-red.active {
   display: block;
 }
-@media (min-width: 320px) {
+@media (min-width: 321px) {
   .column-red.active {
     margin: 0px 0px 0px -12px;
   }
