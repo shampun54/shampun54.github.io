@@ -1913,11 +1913,6 @@ body.scroll-lock {
   text-align: center;
   gap: 20px;
 }
-@media (max-width: 767px) {
-  .pages__videos {
-    display: none;
-  }
-}
 .pages__video img {
   max-width: 100%;
 }
