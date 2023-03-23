@@ -150,35 +150,38 @@ if (inputsContacts.length > 0) {
 
 //Услуги товары
 
+/*
+const itemsInside = document.querySelectorAll(".service__item");
 
-const columns = document.querySelectorAll(".service__column");
+if (itemsInside.length > 0) {
+	itemsInside.forEach((itemInside) => {
+		if (!itemInside.classList.contains("item-info")) {
+			itemInside.addEventListener("click", function (e) {
+				itemInside.nextElementSibling.classList.add("active")
+			})
+			itemInside.addEventListener("mouseleave", function (e) {
+				itemInside.nextElementSibling.classList.remove("active")
+			})
+		}
+	})
+}
+*/
+/*
+window.addEventListener("resize", function (e) {
+	if (window.innerWidth < 992) {
 
-columns.forEach((column) => {
-	const columnsRed = document.querySelectorAll(".column-red")
-	if (columnsRed.length > 0) {
-		column.addEventListener("mouseenter", function (e) {
-			column.nextElementSibling.classList.add("active")
-		})
-		column.addEventListener("mouseleave", function (e) {
-			column.nextElementSibling.classList.remove("active")
-		})
-		column.addEventListener("click", function (e) {
-			column.nextElementSibling.classList.toggle("active")
-		})
-		columnsRed.forEach((item) => {
-			item.addEventListener("mouseenter", function (e) {
-				item.classList.add("active")
+		const columns = document.querySelectorAll(".service__column");
+		if (columns.length > 0) {
+			columns.forEach((column) => {
+				column.addEventListener("click", function (e) {
+					column.nextElementSibling.classList.toggle("active")
+				})
 			})
-			item.addEventListener("mouseleave", function (e) {
-				item.classList.remove("active")
-			})
-		})
+		}
+
 	}
-
-
 })
-
-
+*/
 /*
 							<article class="service__column column-red">
 								<div class="service__item item-service">
