@@ -116,17 +116,17 @@ new Swiper('.reviews__columns', {
 const buttonInput = document.querySelector(".form-contacts__title input");
 const spanInput = document.querySelector(".form-contacts__title span");
 
+if (buttonInput) {
+	buttonInput.addEventListener("change", function (e) {
 
-buttonInput.addEventListener("change", function (e) {
-
-	spanInput.classList.add("active")
-	spanInput.innerHTML = '';
-	spanInput.innerHTML = 'Файл добавлен';
-})
-buttonInput.addEventListener("click", function (e) {
-	spanInput.classList.remove("active")
-})
-
+		spanInput.classList.add("active")
+		spanInput.innerHTML = '';
+		spanInput.innerHTML = 'Файл добавлен';
+	})
+	buttonInput.addEventListener("click", function (e) {
+		spanInput.classList.remove("active")
+	})
+}
 //Фокус формам
 
 
@@ -202,3 +202,47 @@ window.addEventListener("resize", function (e) {
 								</div>
 							</article>
 */
+
+//хедер плашка
+
+window.addEventListener("scroll", function (e) {
+
+	const pages = document.querySelector(".pages");
+	if (pages) {
+		let pagesOffSet = pages.getBoundingClientRect().top;
+		let coeficcent = 6
+		let pagesHeight = pages.clientHeight;
+		let head = document.querySelector(".header")
+		if (window.pageYOffset >= (pagesHeight - pagesOffSet) / coeficcent) {
+			head.classList.add("active")
+		} else {
+			head.classList.remove("active")
+		}
+	}
+	const service = document.querySelector(".service")
+
+	if (service) {
+		let pagesOffSet = service.getBoundingClientRect().top;
+		let coeficcent = 6
+		let pagesHeight = service.clientHeight;
+		let head = document.querySelector(".header")
+		if (window.pageYOffset >= (pagesHeight - pagesOffSet) / coeficcent) {
+			head.classList.add("active")
+		} else {
+			head.classList.remove("active")
+		}
+	}
+	const main_screen = document.querySelector(".main-screen")
+
+	if (main_screen) {
+		let pagesOffSet = main_screen.getBoundingClientRect().top;
+		let coeficcent = 8
+		let pagesHeight = main_screen.clientHeight;
+		let head = document.querySelector(".header")
+		if (window.pageYOffset >= (pagesHeight - pagesOffSet) / coeficcent) {
+			head.classList.add("active")
+		} else {
+			head.classList.remove("active")
+		}
+	}
+})

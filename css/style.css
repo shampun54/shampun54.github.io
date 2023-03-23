@@ -856,10 +856,16 @@ body.scroll-lock {
   left: 0;
   padding: 20px 40px 20px 40px;
   z-index: 50;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
   border-bottom: 2px solid #fff;
 }
-.header.scroll {
+.header.active {
   position: fixed;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
   background-color: #212121;
 }
 @media (max-width: 767px) {

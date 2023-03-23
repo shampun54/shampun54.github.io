@@ -8,12 +8,14 @@
 	left: 0;
 	padding: 20px 40px 20px 40px;
 	z-index: 50;
+	transition: all 0.8s ease 0s;
 	// .header__body
 	border-bottom: 2px solid #fff;
 
 
-	&.scroll {
+	&.active {
 		position: fixed;
+		transition: all 0.8s ease 0s;
 		background-color: #212121;
 	}
 
